@@ -183,6 +183,7 @@ jobs:
         if: ${{ always() && matrix.has-authoritative-test-results }}
         with:
           files: "test-results/**/*.xml"
+          deduplicate_classes_by_file_name: true
 
       - name: Coverage comment
         if: ${{ matrix.has-authoritative-test-results }}
