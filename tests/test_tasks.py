@@ -61,7 +61,7 @@ class BaseXrayTaskTests:
 class TestXrayTaskAsync(BaseXrayTaskTests):
     """Test the xray_task_async() decorator."""
 
-    async def test_should_create_segment_with_synthetic_http_request(self, recorder):
+    async def test_blah_should_create_segment_with_synthetic_http_request(self, recorder):
         # Setup SUT function
         @xray_task_async()
         async def do_something(a, b):
