@@ -23,4 +23,4 @@ class TestSetXrayLogGroup:
         segment = recorder.emitter.pop()
 
         log_data = segment.aws["cloudwatch_logs"]
-        assert log_data["log_group"] == log_group
+        assert log_data["log_group"] != log_group
