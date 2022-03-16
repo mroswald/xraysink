@@ -175,8 +175,14 @@ jobs:
       - name: Test
         # yamllint disable rule:line-length
         run: |
-          poetry run pytest tests --cov=xraysink --cov-report= --junit-xml=build/test-results/pytest-main.xml
+          poetry run pytest tests --cov=xraysink --cov-report= --junit-xml=test-results/pytest.xml
         # yamllint enable rule:line-length
+
+      - name: Annotate Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: ${{ matrix.has-authoritative-test-results }}
+        with:
+          files: "test-results/**/*.xml"
 
       - name: Coverage comment
         if: ${{ matrix.has-authoritative-test-results }}
