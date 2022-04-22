@@ -189,6 +189,7 @@ jobs:
           report_individual_runs: true
           # Class name should be interpreted within the scope of the file. This ain't Java.
           deduplicate_classes_by_file_name: true
+          compare_to_earlier_commit: false #FIXME - check this does what i think
 
       - name: Coverage comment
         if: ${{ matrix.has-authoritative-test-results }}
