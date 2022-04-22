@@ -183,6 +183,9 @@ jobs:
         if: ${{ always() && matrix.has-authoritative-test-results }}
         with:
           files: "test-results/**/*.xml"
+          check_name: "Combined Test Report"
+          comment_title: "Test Report"
+          report_individual_runs: true
           deduplicate_classes_by_file_name: true
 
       - name: Coverage comment
