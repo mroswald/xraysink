@@ -175,7 +175,7 @@ jobs:
       - name: Test
         # yamllint disable rule:line-length
         run: |
-          poetry run pytest tests --cov=xraysink --cov-report= --junit-xml=test-results/junit/pytest.xml
+          poetry run pytest tests --cov=xraysink --cov-report= --junit-xml=test-results/junit/pytest.xml --disable-warnings
         # yamllint enable rule:line-length
 
       - name: Annotate Test Results
